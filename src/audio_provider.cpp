@@ -27,7 +27,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-
+#include  <Arduino.h>
 #include "audio_provider.h"
 
 #include "PDM.h"
@@ -48,6 +48,7 @@ volatile int32_t g_latest_audio_timestamp = 0;
 void CaptureSamples() {
   // This is how many bytes of new data we have each time this is called
   const int number_of_samples = DEFAULT_PDM_BUFFER_SIZE;
+  Serial.println("reading audio");
   // Calculate what timestamp the last audio sample represents
   const int32_t time_in_ms =
       g_latest_audio_timestamp +

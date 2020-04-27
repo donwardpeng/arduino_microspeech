@@ -13,9 +13,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 #include  <Arduino.h>
-#include <TensorFlowLite.h>
-
-#include "main_functions.h"
 
 #include "audio_provider.h"
 #include "command_responder.h"
