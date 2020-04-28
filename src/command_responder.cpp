@@ -12,8 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "Arduino.h"
-
+#include <Arduino.h>
 #include "command_responder.h"
 
 // Toggles the LED every inference, and keeps it on for ~2 seconds if a "yes"

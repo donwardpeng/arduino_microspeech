@@ -14,6 +14,7 @@ limitations under the License.
 ==============================================================================*/
 #include  <Arduino.h>
 
+#include "main_functions.h"
 #include "audio_provider.h"
 #include "command_responder.h"
 #include "feature_provider.h"
@@ -61,6 +62,8 @@ void setup() {
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
 
+  error_reporter->Report("Setting up");
+   
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
   model = tflite::GetModel(g_tiny_conv_micro_features_model_data);
@@ -128,6 +131,7 @@ void setup() {
 
 // The name of this function is important for Arduino compatibility.
 void loop() {
+  error_reporter->Report("Looping");
   // Fetch the spectrogram for the current time.
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
